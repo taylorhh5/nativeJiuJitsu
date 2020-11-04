@@ -24,7 +24,7 @@ export default function Takedowns(props) {
 function getNewsFromAPI() {
   axios.get('https://jiujitsux.herokuapp.com/api/moves/takedown')
       .then( function (response) {
-        console.log(response.data);
+        setTakedowns(response.data);
       })
       .catch(function (error) {
           console.log(error)
@@ -41,20 +41,19 @@ function getNewsFromAPI() {
         onPress={() => props.navigation.navigate("About")}
       /> */}
 
-      {/* <FlatList
+      <FlatList
         style={style.listContainer}
         data={takedowns}
         renderItem={({ item }) => (
           <TouchableOpacity
             onPress={() =>
-              props.navigation.navigate({ name: "Review", params: { item } })
+              props.navigation.navigate({ name: "MoveCard", params: { item } })
             }
           >
             <Text style={style.title}>{item.name}</Text>
           </TouchableOpacity>
         )}
-      /> */}
-
+      />
       
     </View>
   );
