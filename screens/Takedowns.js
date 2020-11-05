@@ -15,10 +15,10 @@ export default function Takedowns(props) {
   const [takedowns, setTakedowns] = useState([]);
 
   useEffect(() => {
-    getNewsFromAPI();
+    GetApi();
   }, []);
 
-  function getNewsFromAPI() {
+  function GetApi() {
     axios
       .get("https://jiujitsux.herokuapp.com/api/moves/takedown")
       .then(function (response) {
@@ -28,7 +28,6 @@ export default function Takedowns(props) {
         console.log(error);
       });
   }
-  // console.log(clothing, "CLOTHING DATA")
 
   //Passing Reviews to Flatlist as Data.
   //Rendering data in ReviewDetails Component (We named "Review" in App.js Draw.Screen)

@@ -11,11 +11,11 @@ import Sidemount from "./screens/Sidemount.js";
 import Back from "./screens/Back.js";
 // import Guard from "./screens/Guard.js";
 import HomeNavigation from "./routes/HomeNavigation.js";
-import TakedownNavigation from './routes/TakedownNavigation.js'
-import GuardNavigator from './routes/GuardNavigator.js'
-import BackNavigator from './routes/BackNavigator.js'
-import SidemountNavigator from './routes/SidemountNavigator.js'
-import MountNavigator from './routes/MountNavigator.js'
+import TakedownNavigation from "./routes/TakedownNavigation.js";
+import GuardNavigator from "./routes/GuardNavigator.js";
+import BackNavigator from "./routes/BackNavigator.js";
+import SidemountNavigator from "./routes/SidemountNavigator.js";
+import MountNavigator from "./routes/MountNavigator.js";
 
 const Drawer = createDrawerNavigator();
 

@@ -4,7 +4,6 @@ import { View, Text, StyleSheet, ImageBackground } from "react-native";
 export default function Home() {
   return (
     <View style={style.container}>
-   
       <ImageBackground
         source={{
           uri:
@@ -16,9 +15,9 @@ export default function Home() {
           alignSelf: "center",
         }}
       ></ImageBackground>
-         <Text style={style.intro}>
+      <Text style={style.intro}>
         There is no losing in jiu-jitsu. You either win or you learn. -Carlos
-        Gracie 
+        Gracie
       </Text>
     </View>
   );
@@ -29,7 +28,7 @@ const style = StyleSheet.create({
     flex: 1,
   },
   intro: {
-      padding:16,
+    padding: 16,
     fontSize: 18,
     marginTop: 15,
     //   fontWeight:"bold",
