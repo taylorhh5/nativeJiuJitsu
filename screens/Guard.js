@@ -36,11 +36,12 @@ function getNewsFromAPI() {
   //Rendering data in ReviewDetails Component (We named "Review" in App.js Draw.Screen)
   return (
     <View style={style.container}>
-      {/* <Button
-        title="Go to about page"
-        onPress={() => props.navigation.navigate("About")}
-      /> */}
-
+   <Text style={style.greeting}>
+        You have chosen to pull your opponent into guard!
+      </Text>
+      <Text style={style.choose}>
+        Choose the type of guard move you'd like to use.
+      </Text>
       <FlatList
         style={style.listContainer}
         data={guard}
@@ -62,7 +63,7 @@ function getNewsFromAPI() {
 const style = StyleSheet.create({
   container: {
     flex: 1,
-    // backgroundColor: "yellow",
+    padding:20,
   },
   listContainer: {
     alignSelf: "center",
@@ -73,5 +74,17 @@ const style = StyleSheet.create({
     fontSize:20,
     marginTop:8,
     color:"blue",
-  }
+  },
+  greeting: {
+    fontSize:18,
+    marginTop: 55,
+    alignSelf: "center",
+  },
+  choose: {
+    color:"grey",
+    fontWeight:"bold",
+    fontSize: 16,
+    marginTop: 15,
+    alignSelf: "center",
+  },
 });

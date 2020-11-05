@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, Button, StyleSheet, Image } from "react-native";
+import { View, Text, Button, StyleSheet, Image, TouchableOpacity } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 
 export default function MoveCard({ navigation, route }) {
@@ -11,11 +11,11 @@ export default function MoveCard({ navigation, route }) {
   return (
     <View>
      <ScrollView bounces={true} style={style.scrollView}>
-      <Button
-        title="Back to Moves"
-        onPress={() => navigation.goBack()}
-        style={{width: 400, height: 400, marginTop:0,  alignSelf:"center"}}
-      />
+    
+      <TouchableOpacity onPress={() => navigation.goBack()}> 
+   <Text style = {style.backButton}>
+Go Home   </Text>
+</TouchableOpacity >
       {/* <Button
       title="React Native by Example"
       onPress={() =>
@@ -40,12 +40,14 @@ const style = StyleSheet.create({
   container: {
     backgroundColor: "lightgray",
     padding: 24,
+    flex:1,
   },
   image: {
-    height:500,
+    height:300,
     marginLeft:0.05,
     marginRight:0.05,
     marginVertical: 82,
+    width:"100%",
 },
 scrollView: {
 
@@ -58,5 +60,8 @@ scrollView: {
   description:{
       marginTop:12,
     fontSize:16
+  },
+  backButton:{
+    width:"100%", borderColor:"blue", fontSize:18, backgroundColor:"blue",  alignSelf:"center", textAlign: "center",
   }
 });

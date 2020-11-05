@@ -6,7 +6,7 @@ export default function Home() {
         <ImageBackground 
         
         source={{uri: 'https://images.pexels.com/photos/2253934/pexels-photo-2253934.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'}}
-        style={{width: 400, height: 400, marginTop:0,  alignSelf:"center"}}
+        style={{width: "100%", height: 400, marginTop:0,  alignSelf:"center",}}
         >
         </ImageBackground>
     )
