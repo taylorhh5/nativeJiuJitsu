@@ -9,9 +9,13 @@ import MoveCard from "./screens/MoveCard.js";
 import Home from "./screens/Home";
 import Sidemount from "./screens/Sidemount.js";
 import Back from "./screens/Back.js";
-import Guard from "./screens/Guard.js";
+// import Guard from "./screens/Guard.js";
 import HomeNavigation from "./routes/HomeNavigation.js";
-
+import TakedownNavigation from './routes/TakedownNavigation.js'
+import GuardNavigator from './routes/GuardNavigator.js'
+import BackNavigator from './routes/BackNavigator.js'
+import SidemountNavigator from './routes/SidemountNavigator.js'
+import MountNavigator from './routes/MountNavigator.js'
 
 const Drawer = createDrawerNavigator();
 
@@ -33,11 +37,11 @@ export default function App() {
         }}
       >
         <Drawer.Screen name="Home" component={HomeNavigation} />
-        <Drawer.Screen name="Takedowns" component={Takedowns} />
-        <Drawer.Screen name="Mount" component={Mount} />
-        <Drawer.Screen name="Back" component={Back} />
-        <Drawer.Screen name="Sidemount" component={Sidemount} />
-        <Drawer.Screen name="Guard" component={Guard} />
+        <Drawer.Screen name="Takedowns" component={TakedownNavigation} />
+        <Drawer.Screen name="Mount" component={MountNavigator} />
+        <Drawer.Screen name="Back" component={BackNavigator} />
+        <Drawer.Screen name="Sidemount" component={SidemountNavigator} />
+        <Drawer.Screen name="Guard" component={GuardNavigator} />
       </Drawer.Navigator>
     </NavigationContainer>
   );

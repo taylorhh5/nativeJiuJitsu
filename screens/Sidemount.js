@@ -78,7 +78,7 @@ const style = StyleSheet.create({
   },
   greeting: {
     fontSize:18,
-    marginTop: 55,
+    marginTop:5,
     alignSelf: "center",
     
   },

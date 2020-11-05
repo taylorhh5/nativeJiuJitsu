@@ -11,7 +11,7 @@ import {
 } from "react-native";
 
 export default function Takedowns(props) {
-    console.log(props,"PROPS")
+  console.log(props, "PROPS");
   const [takedowns, setTakedowns] = useState([]);
 
   useEffect(() => {
@@ -77,13 +77,13 @@ const style = StyleSheet.create({
     color: "blue",
   },
   greeting: {
-    fontSize:18,
-    marginTop: 55,
+    fontSize: 18,
+    marginTop: 15,
     alignSelf: "center",
   },
   choose: {
-    color:"grey",
-    fontWeight:"bold",
+    color: "grey",
+    fontWeight: "bold",
     fontSize: 16,
     marginTop: 5,
     alignSelf: "center",

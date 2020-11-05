@@ -14,7 +14,7 @@ export default function MoveCard({ navigation, route }) {
     
       <TouchableOpacity onPress={() => navigation.goBack()}> 
    <Text style = {style.backButton}>
-Go Home   </Text>
+Go Back To Move List   </Text>
 </TouchableOpacity >
       {/* <Button
       title="React Native by Example"
