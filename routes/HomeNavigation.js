@@ -16,7 +16,7 @@ export default function Navigations() {
         name="Home"
         component={Home}
         options={() => ({
-          headerTitle: () => <Header title="HOME" />,
+          headerTitle: () => <Header title="Brazilian Jiu-Jitsu Trainer" />,
         })}
       />
     

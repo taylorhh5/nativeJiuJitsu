@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import axios from 'axios';
 
 import {
   View,
@@ -10,24 +10,26 @@ import {
   TouchableOpacity,
 } from "react-native";
 
-export default function Takedowns(props) {
-    console.log(props,"PROPS")
-  const [takedowns, setTakedowns] = useState([]);
+
+export default function Mount(props) {
+
+
+  const [mount, setMount] = useState([])
 
   useEffect(() => {
-    getNewsFromAPI();
-  }, []);
+    getNewsFromAPI()
+}, [])
 
-  function getNewsFromAPI() {
-    axios
-      .get("https://jiujitsux.herokuapp.com/api/moves/takedown")
-      .then(function (response) {
-        setTakedowns(response.data);
+  
+function getNewsFromAPI() {
+  axios.get('https://jiujitsux.herokuapp.com/api/moves/mount')
+      .then( function (response) {
+        setMount(response.data);
       })
       .catch(function (error) {
-        console.log(error);
-      });
-  }
+          console.log(error)
+      })
+}
   // console.log(clothing, "CLOTHING DATA")
 
   //Passing Reviews to Flatlist as Data.
@@ -38,15 +40,10 @@ export default function Takedowns(props) {
         title="Go to about page"
         onPress={() => props.navigation.navigate("About")}
       /> */}
-      <Text style={style.greeting}>
-        You have chosen to take down your opponent!
-      </Text>
-      <Text style={style.choose}>
-        Choose the type of takedown you'd like to use.
-      </Text>
+
       <FlatList
         style={style.listContainer}
-        data={takedowns}
+        data={mount}
         renderItem={({ item }) => (
           <TouchableOpacity
             onPress={() =>
@@ -57,6 +54,7 @@ export default function Takedowns(props) {
           </TouchableOpacity>
         )}
       />
+      
     </View>
   );
 }
@@ -70,22 +68,10 @@ const style = StyleSheet.create({
     alignSelf: "center",
     marginTop: 15,
   },
-  title: {
-    fontWeight: "bold",
-    fontSize: 20,
-    marginTop: 8,
-    color: "blue",
-  },
-  greeting: {
-    fontSize:18,
-    marginTop: 55,
-    alignSelf: "center",
-  },
-  choose: {
-    color:"grey",
+  title:{
     fontWeight:"bold",
-    fontSize: 16,
-    marginTop: 5,
-    alignSelf: "center",
-  },
+    fontSize:20,
+    marginTop:8,
+    color:"blue",
+  }
 });

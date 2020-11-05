@@ -1,10 +1,13 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, ImageBackground} from 'react-native'
 
 export default function Home() {
     return (
-        <View>
-            <Text>Welcome to Virtual Jiu-Jitsu Trainer</Text>
-        </View>
+        <ImageBackground 
+        
+        source={{uri: 'https://images.pexels.com/photos/2253934/pexels-photo-2253934.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'}}
+        style={{width: 400, height: 400, marginTop:0,  alignSelf:"center"}}
+        >
+        </ImageBackground>
     )
 }

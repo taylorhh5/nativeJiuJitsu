@@ -5,8 +5,13 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 
 
 import Takedowns from './screens/Takedowns.js'
+import Mount from './screens/Mount.js'
 import MoveCard from './screens/MoveCard.js'
 import Home from "./screens/Home";
+import Sidemount from './screens/Sidemount.js'
+import Back from './screens/Back.js'
+import Guard from './screens/Guard.js'
+
 import HomeNavigation from './routes/HomeNavigation.js'
 // import About from "./screens/About";
 // import ReviewDetails from "./screens/ReviewDetails.js";
@@ -40,6 +45,13 @@ export default function App() {
               <Drawer.Screen name="Home" component={HomeNavigation} />
 
         <Drawer.Screen name="Takedowns" component={Takedowns} />
+        <Drawer.Screen name="Mount" component={Mount} />
+        <Drawer.Screen name="Back" component={Back} />
+
+        <Drawer.Screen name="Sidemount" component={Sidemount} />
+        <Drawer.Screen name="Guard" component={Guard} />
+
+
         <Drawer.Screen name="MoveCard" component={MoveCard} />
 
 
