@@ -1,9 +1,11 @@
 import React from "react";
 import { View, Text, StyleSheet, ImageBackground } from "react-native";
+import Register from './Register.js'
 
 export default function Home() {
   return (
     <View style={style.container}>
+      <Register/>
       <ImageBackground
         source={{
           uri:
@@ -14,6 +16,7 @@ export default function Home() {
           height: 400,
           alignSelf: "center",
         }}
+        // resizeMode="contain"
       ></ImageBackground>
       <Text style={style.intro}>
         There is no losing in jiu-jitsu. You either win or you learn. -Carlos
