@@ -1,12 +1,80 @@
-import React from "react";
-import { View, Text, TextInput, StyleSheet } from "react-native";
+import React, { useState, useEffect } from "react";
+import { View, Text, TextInput, StyleSheet, Button } from "react-native";
+import axios from "axios";
 
 export default function Register() {
+  const credentials = {
+    email: "",
+    password: "",
+  };
+  const [signUp, setSignUp] = useState({
+    email: "",
+    password: "",
+  });
+
+  //   const [data, setData] = React.useState({
+  //     username: '',
+  //     password: '',
+  //     confirm_password: '',
+  //     check_textInputChange: false,
+  //     secureTextEntry: true,
+  //     confirm_secureTextEntry: true,
+  // });
+
+  //When typing in email input detected, setSignup to everything in signup but update email with value
+  const handleEmailChange = (val) => {
+    setSignUp({
+      ...signUp,
+      email: val,
+    });
+  };
+
+  //When typing in password input detected, setSignup to everything in signup but update password with value
+  const handlePasswordChange = (val) => {
+    setSignUp({
+      ...signUp,
+      password: val,
+    });
+  };
+
+
+  const handleSubmit = () => {
+    axios
+      .post("https://jiujitsux.herokuapp.com/api/users/register", signUp)
+      .then((response) => {
+        console.log(response, "register response");
+      })
+      .catch((err) => console.log("register error"));
+  };
+
+  // useEffect(() => {
+  //   axios
+  //   .post('https://jiujitsux.herokuapp.com/api/users/register', signUp)
+  //     .then(function (response) {
+  //       console.log(response.data);
+  //     })
+  //     .catch(function (error) {
+  //       console.log(error);
+  //     });
+  // }, []);
+
   return (
     <View>
+      <Text>{signUp.email}</Text>
+      <Text>{signUp.password}</Text>
       <Text style={styles.registerHeader}>Register</Text>
-      <TextInput style={styles.input} placeholder="Email"></TextInput>
-      <TextInput style={styles.input} placeholder="Password"></TextInput>
+      <TextInput
+        style={styles.input}
+        placeholder="Email"
+        onChangeText={(val) => handleEmailChange(val)}
+      ></TextInput>
+      <TextInput
+        secureTextEntry={true}
+        style={styles.input}
+        placeholder="Password"
+        onChangeText={(val) => handlePasswordChange(val)}
+      ></TextInput>
+      <Button title="Submit" onPress={handleSubmit}></Button>
     </View>
   );
 }
@@ -22,10 +90,10 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "700",
   },
-  registerHeader:{
-      alignSelf:"center",
-      fontSize:20,
-      fontWeight:"bold",
-      marginTop:5
-  }
+  registerHeader: {
+    alignSelf: "center",
+    fontSize: 20,
+    fontWeight: "bold",
+    marginTop: 5,
+  },
 });
