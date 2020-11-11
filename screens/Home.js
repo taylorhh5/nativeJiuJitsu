@@ -1,10 +1,13 @@
 import React from "react";
 import { View, Text, StyleSheet, ImageBackground } from "react-native";
 import Register from './Register.js'
+import Login from './Login.js'
+import { ScrollView } from "react-native-gesture-handler";
 
 export default function Home() {
   return (
     <View style={style.container}>
+      <ScrollView>
       <Register/>
       <ImageBackground
         source={{
@@ -22,6 +25,8 @@ export default function Home() {
         There is no losing in jiu-jitsu. You either win or you learn. -Carlos
         Gracie
       </Text>
+      <Login/>
+      </ScrollView>
     </View>
   );
 }

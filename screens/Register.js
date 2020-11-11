@@ -3,23 +3,10 @@ import { View, Text, TextInput, StyleSheet, Button } from "react-native";
 import axios from "axios";
 
 export default function Register() {
-  const credentials = {
-    email: "",
-    password: "",
-  };
   const [signUp, setSignUp] = useState({
     email: "",
     password: "",
   });
-
-  //   const [data, setData] = React.useState({
-  //     username: '',
-  //     password: '',
-  //     confirm_password: '',
-  //     check_textInputChange: false,
-  //     secureTextEntry: true,
-  //     confirm_secureTextEntry: true,
-  // });
 
   //When typing in email input detected, setSignup to everything in signup but update email with value
   const handleEmailChange = (val) => {
@@ -37,7 +24,6 @@ export default function Register() {
     });
   };
 
-
   const handleSubmit = () => {
     axios
       .post("https://jiujitsux.herokuapp.com/api/users/register", signUp)
@@ -46,17 +32,6 @@ export default function Register() {
       })
       .catch((err) => console.log("register error"));
   };
-
-  // useEffect(() => {
-  //   axios
-  //   .post('https://jiujitsux.herokuapp.com/api/users/register', signUp)
-  //     .then(function (response) {
-  //       console.log(response.data);
-  //     })
-  //     .catch(function (error) {
-  //       console.log(error);
-  //     });
-  // }, []);
 
   return (
     <View>
